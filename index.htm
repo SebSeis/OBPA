@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ontology for building permit authorities</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://w3id.org/obpa#",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>Vocabulary for describing organizational structures of building permit authorities</p>"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Ontology for building permit authorities"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.8.3</span>
+  </div>
+  <h1>Ontology for building permit authorities</h1>
+<h3><em>A taxonomy</em></h3>
+  <section id="conceptscheme">
+      <h2 style="display:none;">Concept Scheme</h2>
+      <dl>
+          <dt>URI</dt>
+          <dd><code>https://w3id.org/obpa#</code></dd>
+            <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+          <dd>
+              Sebastian Seiss Judith Fauth<br/>
+          </dd>
+          <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/modified">Modified</a></dt>
+          <dd>2022-09-12</dd>
+          <dt>Version Information</dt>
+          <dd>0.3</dd>
+          <dt>Version URI</dt>
+          <dd><a href="https://w3id.org/obpa/0.3">https://w3id.org/obpa/0.3</a></dd>
+          <dt>Ontology RDF</dt>
+          <dd><a href="data_file.ttl">RDF (turtle)</a></dd>
+      </dl>
+      <h2>Description</h2>
+      <div id="description">
+          <p>Vocabulary for describing organizational structures of building permit authorities</p>
+      </div>
+  </section>
+  <section id="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+          <li><a href="#concepts">Concepts</a></li>
+          <li><a href="#namespaces">Namespaces</a></li>
+          <li><a href="#legend">Legend</a></li>
+      </ol>
+  </section>
+  <section id="overview">
+      <h2>Overview</h2>
+      <div class="figure">
+          <div style="width:500px; height:500px; background-color: black;">&nbsp;</div>
+          <div class="caption"><strong>Figure 1:</strong> Taxonomy overview</div>
+      </div>
+  </section>
+  <section id="concepts">
+    <h2>Concepts <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hierarchy">
+<li><a href="http://w3id.org/saro#Expertise">http://w3id.org/saro#Expertise</a></li><li><a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing</a>
+<ul><li><a href="http://www.w3.org/2003/01/geo/wgs84_pos#Point">http://www.w3.org/2003/01/geo/wgs84_pos#Point</a></li></ul></li><li><a href="http://www.w3.org/2006/vcard/ns#Address">vcard:Address</a></li><li><a href="http://www.w3.org/2006/vcard/ns#Kind">vcard:Kind</a>
+<ul><li><a href="http://www.w3.org/2006/vcard/ns#Organization">vcard:Organization</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#Department">Department</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#Organization">Organization</a>
+<ul><li><a href="https://w3id.org/obpa#BuildingAuthority">BuildingAuthority</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#HistoricPreservationAuthority">HistoricPreservationAuthority</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#NatureConservationAuthority_Erfurt">NatureConservationAuthority_Erfurt</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#ProofingStructuralEngineeringOffice">ProofingStructuralEngineeringOffice</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#PublicAuthorityAgency">PublicAuthorityAgency</a></li></ul></li></ul></li><li><a href="http://www.w3.org/2006/vcard/ns#Location">vcard:Location</a></li><li><a href="http://www.w3.org/ns/org#Organization">org:Organization</a></li><li><a href="http://www.w3.org/ns/org#Role">org:Role</a></li><li><a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a>
+<ul><li><a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a></li></ul></li><li><a href="http://xmlns.com/foaf/0.1/Organization">foaf:Organization</a></li><li><a href="https://schema.org/Organization">sdo:Organization</a></li><li><a href="https://w3id.org/bot#Building">bot:Building</a></li><li><a href="https://w3id.org/obpa#Activity">Activity</a>
+<ul><li><a href="https://w3id.org/obpa#BuildingPermittingActivity">BuildingPermittingActivity</a></li></ul></li><li><a href="https://w3id.org/obpa#Agent">Agent</a>
+<ul><li><a href="https://w3id.org/obpa#Person">Person</a>
+<ul><li><a href="https://w3id.org/obpa#Examiner">Examiner</a>
+<ul><li><a href="https://w3id.org/obpa#BuildingOfficial">BuildingOfficial</a></li></ul></li></ul></li></ul></li><li><a href="https://w3id.org/obpa#Building">Building</a>
+<ul><li><a href="https://w3id.org/obpa#Heritage">Heritage</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#IndustrialConstruction">IndustrialConstruction</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#ResidentialConstruction">ResidentialConstruction</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#SpecialConstruction">SpecialConstruction</a></li></ul>
+<ul><li><a href="https://w3id.org/ocqa#CommercialConstruction">https://w3id.org/ocqa#CommercialConstruction</a></li></ul></li><li><a href="https://w3id.org/obpa#BuildingApplication">BuildingApplication</a></li><li><a href="https://w3id.org/obpa#ConstructionProject">ConstructionProject</a></li><li><a href="https://w3id.org/obpa#Expertise">Expertise</a></li><li><a href="https://w3id.org/obpa#Plotofland">Plotofland</a></li><li><a href="https://w3id.org/obpa#Regulations">Regulations</a></li><li><a href="https://w3id.org/obpa#Role">Role</a>
+<ul><li><a href="https://w3id.org/obpa#ExaminerRole">ExaminerRole</a>
+<ul><li><a href="https://w3id.org/obpa#BuildingOfficialRole">BuildingOfficialRole</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#FireOfficialRole">FireOfficialRole</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#ProofingStructuralEngineerRole">ProofingStructuralEngineerRole</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#PublicOfficerRole">PublicOfficerRole</a></li></ul></li></ul>
+<ul><li><a href="https://w3id.org/obpa#ExternalRole">ExternalRole</a></li></ul></li><li><a href="https://w3id.org/obpa#Sector">Sector</a></li><li><a href="https://w3id.org/obpa#SubjectArea">SubjectArea</a>
+<ul><li><a href="https://w3id.org/obpa#AdministrativeSubjectArea">AdministrativeSubjectArea</a></li></ul>
+<ul><li><a href="https://w3id.org/obpa#TechnicalSubjectArea">TechnicalSubjectArea</a></li></ul></li><li><a href="#None">None</a></li>
+</ul>
+    <div class="entity concept" id="Expertise">
+        <h3>Expertise<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://w3id.org/saro#Expertise</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    An advanced or exceptional knowledge or skill in an area or topic<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Expertise">Expertise</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Point">
+        <h3>None<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2003/01/geo/wgs84_pos#Point</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                     
+Uniquely identified by lat/long/alt. i.e.
+
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).
+
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
+  <br/>
+                    A point, typically described using a coordinate system relative to Earth, such as WGS84.
+  <br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="SpatialThing">
+        <h3>None<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Anything with spatial extent, i.e. size, shape, or position.
+ e.g. people, places, bowling balls, as well as abstract areas like cubes.
+<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Narrower Concepts</th>
+                <td>
+                    <a href="http://www.w3.org/2003/01/geo/wgs84_pos#Point">http://www.w3.org/2003/01/geo/wgs84_pos#Point</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Address">
+        <h3>Address<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              Address (en)
+              , 
+              Adresse (de)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2006/vcard/ns#Address</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Kind">
+        <h3>Kind<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2006/vcard/ns#Kind</code></td>
+            </tr>
+            <tr>
+                <th>Narrower Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Department">Department</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.w3.org/2006/vcard/ns#Organization">vcard:Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#Organization">Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Location">
+        <h3>Location<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2006/vcard/ns#Location</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Organization">
+        <h3>Organization<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2006/vcard/ns#Organization</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    An object representing an organization.  An organization is a single entity, and might represent a business or government, a department or division within a business or government, a club, an association, or the like.
+<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="http://www.w3.org/2006/vcard/ns#Kind">vcard:Kind</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Organization">Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Organization1">
+        <h3>Organization<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/org#Organization</code></td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Organization">Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Role">
+        <h3>Role<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/org#Role</code></td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Role">Role</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Agent">
+        <h3>Agent<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/Agent</code></td>
+            </tr>
+            <tr>
+                <th>Narrower Concepts</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Agent">Agent</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Organization1">
+        <h3>Organization<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/Organization</code></td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Organization">Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Person">
+        <h3>Person<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/Person</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Person">Person</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Organization1">
+        <h3>Organization<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://schema.org/Organization</code></td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Organization">Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Building">
+        <h3>Building<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/bot#Building</code></td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Building">Building</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Activity">
+        <h3>Activity<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Activity</code></td>
+            </tr>
+            <tr>
+                <th>Narrower Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#BuildingPermittingActivity">BuildingPermittingActivity</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Administrativesubjectarea">
+        <h3>Administrative subject area<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              Verwaltungsfachbereiche (de)
+              , 
+              Administrative subject area (en)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#AdministrativeSubjectArea</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#SubjectArea">SubjectArea</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Agents">
+        <h3>Agents<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Agent</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Agents are actors or stakeholders associated with the building permitting process<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Narrower Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Person">Person</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Building1">
+        <h3>Building<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              Gebäude (de)
+              , 
+              Building (en)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Building</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Hier könnte eine  Verknüpfung zu Bot Building entstehen<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Narrower Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Heritage">Heritage</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#ResidentialConstruction">ResidentialConstruction</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#IndustrialConstruction">IndustrialConstruction</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/ocqa#CommercialConstruction">https://w3id.org/ocqa#CommercialConstruction</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#SpecialConstruction">SpecialConstruction</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="https://w3id.org/bot#Building">bot:Building</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="BuildingApplication">
+        <h3>Building Application<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              Building Application (en)
+              , 
+              Bauantrag (de)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#BuildingApplication</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="buildingauthority">
+        <h3>building authority<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#BuildingAuthority</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Organization">Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Buildingofficial">
+        <h3>Building official<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              Building official (en)
+              , 
+              Behördenmitarbeiter (de)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#BuildingOfficial</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Beschreibt den Mitarbeiter der Baubehörede<br/>
+                    Describes the memeber of an building authority<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Examiner">Examiner</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Buildingofficialrole">
+        <h3>Building official role<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              Behördenmitarbeiterrolle (de)
+              , 
+              Building official role (en)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#BuildingOfficialRole</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Beschreibt mögliche Rollen von Mitarbeitern einer Baubehörde<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#ExaminerRole">ExaminerRole</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="BuildingPermittingActivity">
+        <h3>BuildingPermittingActivity<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#BuildingPermittingActivity</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Activity">Activity</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="constructionproject">
+        <h3>construction project<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              construction project (en)
+              , 
+              Bauvohaben (de)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#ConstructionProject</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Department">
+        <h3>Department<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Department</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="http://www.w3.org/2006/vcard/ns#Kind">vcard:Kind</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Examiner">
+        <h3>Examiner<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Examiner</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Person">Person</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Narrower Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#BuildingOfficial">BuildingOfficial</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="ExaminerRole">
+        <h3>ExaminerRole<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              Prüfrollen (de)
+              , 
+              ExaminerRole (en)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#ExaminerRole</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Describes roles to examine building applications<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Role">Role</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Narrower Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#BuildingOfficialRole">BuildingOfficialRole</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#PublicOfficerRole">PublicOfficerRole</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#FireOfficialRole">FireOfficialRole</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#ProofingStructuralEngineerRole">ProofingStructuralEngineerRole</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="capability">
+        <h3>capability<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              Expertise (en)
+              , 
+              Expertise (de)
+              , 
+              Fähigkeit (de)
+              , 
+              capability (en)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Expertise</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Beschreibt die Fähigkeiten eines Mitarbeiter im Bezug auf die von ihm zu prüfenden Gebäudetypen<br/>
+                    Describes the capability of a person or building official<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="http://w3id.org/saro#Expertise">http://w3id.org/saro#Expertise</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="ExternalRole">
+        <h3>ExternalRole<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#ExternalRole</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Role">Role</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="FireOfficialRole">
+        <h3>None<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#FireOfficialRole</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#ExaminerRole">ExaminerRole</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Heritage">
+        <h3>Heritage<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Heritage</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Building">Building</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Historicpreservationauthority">
+        <h3>Historic preservation authority<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#HistoricPreservationAuthority</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Organization">Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="IndustrialConstruction">
+        <h3>IndustrialConstruction<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#IndustrialConstruction</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Building">Building</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="NatureConservationAuthority">
+        <h3>Nature Conservation Authority<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#NatureConservationAuthority_Erfurt</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Organization">Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Organization1">
+        <h3>Organization<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Organization</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="http://www.w3.org/2006/vcard/ns#Kind">vcard:Kind</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Narrower Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#HistoricPreservationAuthority">HistoricPreservationAuthority</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#PublicAuthorityAgency">PublicAuthorityAgency</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#ProofingStructuralEngineeringOffice">ProofingStructuralEngineeringOffice</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#NatureConservationAuthority_Erfurt">NatureConservationAuthority_Erfurt</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#BuildingAuthority">BuildingAuthority</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="http://www.w3.org/2006/vcard/ns#Organization">vcard:Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://schema.org/Organization">sdo:Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://xmlns.com/foaf/0.1/Organization">foaf:Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.w3.org/ns/org#Organization">org:Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Person1">
+        <h3>Person<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Person</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    A human being involved in the building permitting process.<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Agent">Agent</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Narrower Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Examiner">Examiner</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Plotofland">
+        <h3>Plot of land<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Plotofland</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    A plot of land describes a area in which the building will be placed. The plot of land is an important part of the building permit<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="ProofingStructuralEngineerRole">
+        <h3>ProofingStructuralEngineerRole<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#ProofingStructuralEngineerRole</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#ExaminerRole">ExaminerRole</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="ProofingStructuralEngineeringOffice">
+        <h3>ProofingStructuralEngineeringOffice<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#ProofingStructuralEngineeringOffice</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Organization">Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="PublicAuthorityAgency">
+        <h3>PublicAuthorityAgency<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#PublicAuthorityAgency</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Organization">Organization</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Publicofficer">
+        <h3>Public officer<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#PublicOfficerRole</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#ExaminerRole">ExaminerRole</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="regulations">
+        <h3>regulations<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Regulations</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="ResidentialConstruction">
+        <h3>ResidentialConstruction<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#ResidentialConstruction</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Building">Building</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Role1">
+        <h3>Role<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              Rolle (de)
+              , 
+              Role (en)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Role</code></td>
+            </tr>
+            <tr>
+                <th>Narrower Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#ExaminerRole">ExaminerRole</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#ExternalRole">ExternalRole</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Exact Matches</th>
+                <td>
+                    <a href="http://www.w3.org/ns/org#Role">org:Role</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Sector">
+        <h3>Sector<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              Sector (en)
+              , 
+              Bereich (de)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#Sector</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="SpecialConstruction">
+        <h3>SpecialConstruction<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#SpecialConstruction</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Building">Building</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Subjectarea">
+        <h3>Subject area<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              Fachbereich (de)
+              , 
+              Subject area (en)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#SubjectArea</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Beschreibt welchen Fachbereich ein Sachbearbeiter abdeckt.<br/>
+                    Describes which subject areas can be processed by an building official<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Narrower Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#AdministrativeSubjectArea">AdministrativeSubjectArea</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="https://w3id.org/obpa#TechnicalSubjectArea">TechnicalSubjectArea</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Technicalsubjectarea">
+        <h3>Technical subject area<sup title="Concept" class="sup-cp">cp</sup></h3>
+            <h4>
+              Technical subject area (en)
+              , 
+              Technische Fachbereiche (de)
+              
+            </h4>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/obpa#TechnicalSubjectArea</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#SubjectArea">SubjectArea</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="CommercialConstruction">
+        <h3>CommercialConstruction<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ocqa#CommercialConstruction</code></td>
+            </tr>
+            <tr>
+                <th>Broader Concepts</th>
+                <td>
+                    <a href="https://w3id.org/obpa#Building">Building</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="None">
+        <h3>None<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>ub22bL607C25</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>:</dt>
+        <dd><code>https://w3id.org/obpa#</code></dd>
+        <dt>bot</dt>
+        <dd><code>https://w3id.org/bot#</code></dd>
+        <dt>foaf</dt>
+        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
+        <dt>org</dt>
+        <dd><code>http://www.w3.org/ns/org#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>vcard</dt>
+        <dd><code>http://www.w3.org/2006/vcard/ns#</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+
+  <section id="legend">
+    <h2>Legend</h2>
+    <table class="entity">
+      <tr><td><sup class="sup-cl" title="Collections">cl</sup></td><td>Collections</td></tr>
+      <tr><td><sup class="sup-cp" title="Concepts">cp</sup></td><td>Concepts</td></tr>
+    </table>
+  </section>
+</body>
+</html>
