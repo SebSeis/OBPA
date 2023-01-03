@@ -12,7 +12,8 @@
 
 <https://w3id.org/obpa#> rdf:type owl:Ontology ;
                           owl:versionIRI <https://w3id.org/obpa/0.3> ;
-                          <http://purl.org/dc/terms/creator> "Sebastian Seiss and Judith Fauth"@en ;
+                          <http://purl.org/dc/terms/creator> "Judith Fauth"@en ,
+                                                             "Sebastian Seiss"@en ;
                           <http://purl.org/dc/terms/modified> "09.12.2022"@en ;
                           <http://purl.org/dc/terms/title> "Ontology for building permit authorities"@en ;
                           rdfs:comment "Diese Ontologie liefert ein Vokabular zur Beschreibung von Baugenehmigungsbehörden"@de ,
@@ -135,8 +136,8 @@ foaf:member rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/obpa#hasAgent
 :hasAgent rdf:type owl:ObjectProperty ;
-          rdfs:domain :Activity ;
-          rdfs:range :Agent .
+          rdfs:domain :Agent ;
+          rdfs:range :Activity .
 
 
 ###  https://w3id.org/obpa#hasBuilding
@@ -432,16 +433,11 @@ foaf:Person rdf:type owl:Class ;
 
 ###  https://w3id.org/bot#Building
 bot:Building rdf:type owl:Class ;
-             owl:equivalentClass :Building ;
-             rdfs:label "Building"@en .
+             owl:equivalentClass :Building .
 
 
 ###  https://w3id.org/obpa#Activity
-:Activity rdf:type owl:Class ;
-          rdfs:comment "Beschreibt eine Aktivität zur Beantragung oder zur Bearbeitung des Bauantrags"@de ,
-                       "Describes an activity of the building permitting process"@en ;
-          rdfs:label "Activity"@en ,
-                     "Aktivität"@de .
+:Activity rdf:type owl:Class .
 
 
 ###  https://w3id.org/obpa#AdministrativeSubjectArea
@@ -510,11 +506,7 @@ bot:Building rdf:type owl:Class ;
                                                                   owl:onProperty :hasRole ;
                                                                   owl:allValuesFrom :BuildingOfficialRole
                                                                 ]
-                                            ] ;
-                            rdfs:comment "Activity to check the building permit"@en ,
-                                         "Activität zur Bauantragsprüfung"@de ;
-                            rdfs:label "Baugenehmigungsaktivität"@de ,
-                                       "Building permitting activity"@en .
+                                            ] .
 
 
 ###  https://w3id.org/obpa#ConstructionProject
@@ -535,9 +527,7 @@ bot:Building rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :hasRole ;
                             owl:someValuesFrom :ExaminerRole
-                          ] ;
-          rdfs:label "Examiner"@en ,
-                     "Sachbearbeiter"@de .
+                          ] .
 
 
 ###  https://w3id.org/obpa#ExaminerRole
@@ -561,9 +551,7 @@ bot:Building rdf:type owl:Class ;
 
 ###  https://w3id.org/obpa#ExternalRole
 :ExternalRole rdf:type owl:Class ;
-              rdfs:subClassOf :Role ;
-              rdfs:label "External role"@en ,
-                         "Externe Rolle"@de .
+              rdfs:subClassOf :Role .
 
 
 ###  https://w3id.org/obpa#FireOfficialRole
@@ -574,8 +562,7 @@ bot:Building rdf:type owl:Class ;
 
 ###  https://w3id.org/obpa#Heritage
 :Heritage rdf:type owl:Class ;
-          rdfs:subClassOf :Building ;
-          rdfs:label "Heritage"@en .
+          rdfs:subClassOf :Building .
 
 
 ###  https://w3id.org/obpa#HistoricPreservationAuthority
@@ -586,8 +573,7 @@ bot:Building rdf:type owl:Class ;
 
 ###  https://w3id.org/obpa#IndustrialConstruction
 :IndustrialConstruction rdf:type owl:Class ;
-                        rdfs:subClassOf :Building ;
-                        rdfs:label "Industrial Construction"@en .
+                        rdfs:subClassOf :Building .
 
 
 ###  https://w3id.org/obpa#NatureConservationAuthority_Erfurt
@@ -652,8 +638,7 @@ bot:Building rdf:type owl:Class ;
 
 ###  https://w3id.org/obpa#ResidentialConstruction
 :ResidentialConstruction rdf:type owl:Class ;
-                         rdfs:subClassOf :Building ;
-                         rdfs:label "Residential Construction"@en .
+                         rdfs:subClassOf :Building .
 
 
 ###  https://w3id.org/obpa#Role
@@ -670,8 +655,7 @@ bot:Building rdf:type owl:Class ;
 
 ###  https://w3id.org/obpa#SpecialConstruction
 :SpecialConstruction rdf:type owl:Class ;
-                     rdfs:subClassOf :Building ;
-                     rdfs:label "Special Construction"@en .
+                     rdfs:subClassOf :Building .
 
 
 ###  https://w3id.org/obpa#SubjectArea
@@ -691,13 +675,26 @@ bot:Building rdf:type owl:Class ;
 
 ###  https://w3id.org/ocqa#CommercialConstruction
 <https://w3id.org/ocqa#CommercialConstruction> rdf:type owl:Class ;
-                                               rdfs:subClassOf :Building ;
-                                               rdfs:label "Commercial Construction"@en .
+                                               rdfs:subClassOf :Building .
 
 
 #################################################################
 #    Individuals
 #################################################################
+
+###  https://w3id.org/obpa#AddressRange01
+:AddressRange01 rdf:type owl:NamedIndividual ,
+                         vcard:Address ;
+                vcard:postal-code "99423"^^xsd:string ,
+                                  "99424"^^xsd:string .
+
+
+###  https://w3id.org/obpa#AddressRange02
+:AddressRange02 rdf:type owl:NamedIndividual ,
+                         vcard:Address ;
+                vcard:postal-code "99425"^^xsd:string ,
+                                  "99426"^^xsd:string .
+
 
 ###  https://w3id.org/obpa#AdministrativeBuildingOfficial
 :AdministrativeBuildingOfficial rdf:type owl:NamedIndividual ,
@@ -712,6 +709,137 @@ bot:Building rdf:type owl:Class ;
                     :Role ;
            rdfs:label "Applicant"@en ,
                       "Bewerber"@de .
+
+
+###  https://w3id.org/obpa#Applicant01
+:Applicant01 rdf:type owl:NamedIndividual ,
+                      :Person ;
+             :hasRole :Applicant .
+
+
+###  https://w3id.org/obpa#BO1
+:BO1 rdf:type owl:NamedIndividual ,
+              :Person ;
+     :CoversSector :AddressRange01 ,
+                   :AddressRange02 ;
+     :employed_by :BuildingAuthority_Erfurt ;
+     :hasRole :SupervisoryBuildingOfficial ;
+     :work_experience 8 .
+
+
+###  https://w3id.org/obpa#BO2
+:BO2 rdf:type owl:NamedIndividual ,
+              :Person ;
+     :CoversSector :AddressRange02 ;
+     :employed_by :BuildingAuthority_Erfurt ;
+     :hasRole :AdministrativeBuildingOfficial ;
+     :hasSubjectArea :public_administration_law ;
+     :work_experience 2 .
+
+
+###  https://w3id.org/obpa#BO3
+:BO3 rdf:type owl:NamedIndividual ,
+              :Person ;
+     :CoversSector :AddressRange01 ;
+     :employed_by :BuildingAuthority_Erfurt ;
+     :hasRole :AdministrativeBuildingOfficial ;
+     :hasSubjectArea :public_administration_law ;
+     :work_experience 7 .
+
+
+###  https://w3id.org/obpa#BO4
+:BO4 rdf:type owl:NamedIndividual ,
+              :Person ;
+     :CoversSector :AddressRange01 ;
+     :employed_by :BuildingAuthority_Erfurt ;
+     :hasExpertise :review_heritage ,
+                   :review_industrial_construction ,
+                   :review_residential_construction ,
+                   :review_special_construction ;
+     :hasRole :TechnicalBuildingOfficial ;
+     :hasSubjectArea :building_law ;
+     :work_experience 7 .
+
+
+###  https://w3id.org/obpa#BO5
+:BO5 rdf:type owl:NamedIndividual ,
+              :Person ;
+     :CoversSector :AddressRange01 ;
+     :employed_by :BuildingAuthority_Erfurt ;
+     :hasExpertise :review_heritage ,
+                   :review_industrial_construction ,
+                   :review_residential_construction ;
+     :hasRole :TechnicalBuildingOfficial ;
+     :hasSubjectArea :planning_law ;
+     :work_experience 3 .
+
+
+###  https://w3id.org/obpa#BO6
+:BO6 rdf:type owl:NamedIndividual ,
+              :Person ;
+     :CoversSector :AddressRange02 ;
+     :employed_by :BuildingAuthority_Erfurt ;
+     :hasExpertise :review_commercial_construction ,
+                   :review_residential_construction ,
+                   :review_special_construction ;
+     :hasRole :TechnicalBuildingOfficial ;
+     :hasSubjectArea :building_law ,
+                     :planning_law ;
+     :work_experience 15 .
+
+
+###  https://w3id.org/obpa#Building01
+:Building01 rdf:type owl:NamedIndividual ,
+                     :Building ,
+                     :Heritage ,
+                     :SpecialConstruction ;
+            :isKindOf :review_heritage ,
+                      :review_special_construction ;
+            :BGF "2500.0"^^xsd:double ;
+            :dinstanceToNaturalConservation "45.0"^^xsd:double .
+
+
+###  https://w3id.org/obpa#BuildingApplication01
+:BuildingApplication01 rdf:type owl:NamedIndividual ,
+                                :BuildingApplication ;
+                       :includes :ConstructionProject01 .
+
+
+###  https://w3id.org/obpa#BuildingApplication02
+:BuildingApplication02 rdf:type owl:NamedIndividual ,
+                                :BuildingApplication .
+
+
+###  https://w3id.org/obpa#BuildingAuthority_Erfurt
+:BuildingAuthority_Erfurt rdf:type owl:NamedIndividual ,
+                                   :BuildingAuthority ,
+                                   :Organization ;
+                          :hasSector :AddressRange01 ,
+                                     :AddressRange02 .
+
+
+###  https://w3id.org/obpa#CheckingApplication01
+:CheckingApplication01 rdf:type owl:NamedIndividual ,
+                                :BuildingPermittingActivity ;
+                       :hasAgent :BO1 ;
+                       :hasBuildingApplication :BuildingApplication01 .
+
+
+###  https://w3id.org/obpa#ConstructionProject01
+:ConstructionProject01 rdf:type owl:NamedIndividual ,
+                                :ConstructionProject ;
+                       :hasBuilding :Building01 .
+
+
+###  https://w3id.org/obpa#HistoricPreservationAuthority_Erfurt
+:HistoricPreservationAuthority_Erfurt rdf:type owl:NamedIndividual ,
+                                               :HistoricPreservationAuthority .
+
+
+###  https://w3id.org/obpa#NatureConservationAuthority_Erfurt
+:NatureConservationAuthority_Erfurt rdf:type owl:NamedIndividual ,
+                                             vcard:Organization ,
+                                             :NatureConservationAuthority_Erfurt .
 
 
 ###  https://w3id.org/obpa#Residents
@@ -883,6 +1011,9 @@ basic geo vocab
 
 <http://www.w3.org/2003/01/geo/wgs84_pos#lat_long> rdfs:comment "A comma-separated representation of a latitude, longitude coordinate." ;
                                                    rdfs:label "lat/long" .
+
+
+:NatureConservationAuthority_Erfurt rdfs:label "Nature Conservation Authority"@en .
 
 
 #################################################################
