@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-02-22T13:55:25.236Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="kltN-Pkdb2QUdG7MQSov" version="20.8.20" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-22T14:03:15.642Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="3BbsqhKkrpXxCVu7IIK5" version="20.8.20" type="github">
   <diagram name="Seite-1" id="x9M6AdpwJ8nIM4zPpMPn">
     <mxGraphModel dx="2977" dy="818" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -24,9 +24,6 @@
         </mxCell>
         <mxCell id="yAC0_n1KJ-UTtstKvsAG-1" value="&lt;div&gt;obpa:Construction&lt;/div&gt;&lt;div&gt;Project&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-1541.28" y="2030" width="120" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="yAC0_n1KJ-UTtstKvsAG-4" value="Sebastian" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
-          <mxGeometry x="-1138" y="1960" width="30" height="60" as="geometry" />
         </mxCell>
         <mxCell id="PfQld-POAb5mEK10FqPQ-1" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="1" vertex="1">
           <mxGeometry x="-1530" y="40" width="535" height="430" as="geometry" />
