@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-03-15T10:15:02.838Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="daUBa11YuENS9Ats-0hP" version="21.0.6" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2023-03-20T14:10:21.775Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.41" etag="p1DuqeOkXQ0faK8S6HvF" version="21.0.6" type="github" pages="3">
   <diagram name="Bearbeitung" id="x9M6AdpwJ8nIM4zPpMPn">
-    <mxGraphModel dx="3209" dy="1777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3031" dy="1965" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -56,7 +56,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="kMmMc6rCylZfMDWPJKr8-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="PfQld-POAb5mEK10FqPQ-29" target="PfQld-POAb5mEK10FqPQ-19">
+        <mxCell id="kMmMc6rCylZfMDWPJKr8-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;dashed=1;" parent="1" source="PfQld-POAb5mEK10FqPQ-29" target="PfQld-POAb5mEK10FqPQ-19" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="PfQld-POAb5mEK10FqPQ-29" value="&lt;font face=&quot;Times New Roman&quot;&gt;obpa:Agent&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -291,7 +291,7 @@
         <mxCell id="oZT9ivqpTFYg9pPiSIXT-29" value="&lt;font style=&quot;font-size: 12px;&quot; face=&quot;Times New Roman&quot;&gt;obpa:Post&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-1329" y="-95.87" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="kMmMc6rCylZfMDWPJKr8-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="PfQld-POAb5mEK10FqPQ-16" target="PfQld-POAb5mEK10FqPQ-29">
+        <mxCell id="kMmMc6rCylZfMDWPJKr8-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;dashed=1;" parent="1" source="PfQld-POAb5mEK10FqPQ-16" target="PfQld-POAb5mEK10FqPQ-29" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="-1262" y="190" />
@@ -351,10 +351,13 @@
     </mxGraphModel>
   </diagram>
   <diagram id="x1GRtyuASVhjyXgWABT3" name="Print">
-    <mxGraphModel dx="2021" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2204" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="GSKwsDA_-xH-m7tmbyq_-1" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;OBPA Ontology:&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-753" y="120" width="700" height="440" as="geometry" />
+        </mxCell>
         <mxCell id="GSKwsDA_-xH-m7tmbyq_-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;exitX=0.178;exitY=1.017;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="GSKwsDA_-xH-m7tmbyq_-3" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
@@ -388,7 +391,7 @@
             <mxPoint x="-295" y="635" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GSKwsDA_-xH-m7tmbyq_-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="GSKwsDA_-xH-m7tmbyq_-6" target="GSKwsDA_-xH-m7tmbyq_-55" edge="1">
+        <mxCell id="GSKwsDA_-xH-m7tmbyq_-8" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="GSKwsDA_-xH-m7tmbyq_-55" target="GSKwsDA_-xH-m7tmbyq_-6" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-216" y="618" as="sourcePoint" />
             <mxPoint x="-235" y="480" as="targetPoint" />
@@ -528,7 +531,7 @@
         <mxCell id="GSKwsDA_-xH-m7tmbyq_-31" value="obpa:Organisation" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-380" y="220" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GSKwsDA_-xH-m7tmbyq_-32" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="GSKwsDA_-xH-m7tmbyq_-6" target="GSKwsDA_-xH-m7tmbyq_-31" edge="1">
+        <mxCell id="GSKwsDA_-xH-m7tmbyq_-32" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="GSKwsDA_-xH-m7tmbyq_-31" target="GSKwsDA_-xH-m7tmbyq_-6" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-206" y="498" as="sourcePoint" />
             <mxPoint x="-318" y="330" as="targetPoint" />
@@ -654,9 +657,6 @@
         </mxCell>
         <mxCell id="GSKwsDA_-xH-m7tmbyq_-59" value="&lt;div&gt;obpa:hasSub&lt;/div&gt;&lt;div&gt;Activity&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
           <mxGeometry x="-644" y="397" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="GSKwsDA_-xH-m7tmbyq_-1" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;OBPA Ontology:&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-753" y="120" width="700" height="440" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
