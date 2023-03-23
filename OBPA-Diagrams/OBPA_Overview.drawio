@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-03-20T15:11:48.780Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.41" etag="dRkYo9hSh-S76_BEwhkm" version="21.0.6" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2023-03-23T12:32:40.570Z" agent="5.0 (Windows)" etag="zUP1eli_01AVZqVtdEBs" version="21.0.6" type="github" pages="3">
   <diagram name="Bearbeitung" id="x9M6AdpwJ8nIM4zPpMPn">
-    <mxGraphModel dx="3031" dy="1965" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2848" dy="1918" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -351,7 +351,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="x1GRtyuASVhjyXgWABT3" name="Print">
-    <mxGraphModel dx="2204" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2021" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -702,9 +702,9 @@
             <mxPoint x="-295" y="635" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="z2F78C6HImc0tUnxGTUi-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="z2F78C6HImc0tUnxGTUi-5" target="z2F78C6HImc0tUnxGTUi-54" edge="1">
+        <mxCell id="z2F78C6HImc0tUnxGTUi-7" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="z2F78C6HImc0tUnxGTUi-54" target="z2F78C6HImc0tUnxGTUi-5" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-216" y="618" as="sourcePoint" />
+            <mxPoint x="70" y="390" as="sourcePoint" />
             <mxPoint x="-235" y="480" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
@@ -842,9 +842,9 @@
         <mxCell id="z2F78C6HImc0tUnxGTUi-30" value="obpa:Organisation" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-380" y="220" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="z2F78C6HImc0tUnxGTUi-31" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="z2F78C6HImc0tUnxGTUi-5" target="z2F78C6HImc0tUnxGTUi-30" edge="1">
+        <mxCell id="z2F78C6HImc0tUnxGTUi-31" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="z2F78C6HImc0tUnxGTUi-30" target="z2F78C6HImc0tUnxGTUi-5" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-206" y="498" as="sourcePoint" />
+            <mxPoint x="90" y="320" as="sourcePoint" />
             <mxPoint x="-318" y="330" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
