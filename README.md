@@ -11,6 +11,6 @@ tags: []
 The ontology for building permit authorities outlines the organization, activities, and personnel of a building authority. It can also be specialized to describe other types of authorities. Additionally, the ontology uses SHACL to semi-automate various processes.
 
 ## Ontology resources
-* HTML      https://sebseis.github.io/OBPA/
+* HTML      https://sebseis.github.io/OBPA/index.html
 * Turtle    https://sebseis.github.io/OBPA/obpa.ttl
 * GitHub    https://github.com/SebSeis/OBPA
