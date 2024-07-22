@@ -827,8 +827,8 @@ bot:Building rdf:type owl:Class ;
                                  "Technische Fachbereiche"@de .
 
 
-###  https://w3id.org/ocqa#CommercialConstruction
-<https://w3id.org/ocqa#CommercialConstruction> rdf:type owl:Class ;
+###  https://w3id.org/obpa#CommercialConstruction
+<https://w3id.org/obpa#CommercialConstruction> rdf:type owl:Class ;
                                                rdfs:subClassOf <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcBuilding> ,
                                                                bot:Building ,
                                                                :Building ;
