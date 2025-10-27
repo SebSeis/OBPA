@@ -1,0 +1,819 @@
+# baseURI: https://w3id.org/obpa#
+# imports: http://www.w3.org/2006/vcard/ns
+
+@prefix : <https://w3id.org/obpa#> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix obpa: <https://w3id.org/obpa/0.3#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.org/dc/elements/1.1/date>
+  rdf:type owl:AnnotationProperty ;
+.
+<http://purl.org/dc/elements/1.1/description>
+  rdf:type owl:AnnotationProperty ;
+.
+<http://purl.org/dc/elements/1.1/title>
+  rdf:type owl:AnnotationProperty ;
+.
+<http://purl.org/dc/terms/creator>
+  rdf:type owl:AnnotationProperty ;
+.
+<http://purl.org/dc/terms/modified>
+  rdf:type owl:AnnotationProperty ;
+.
+<http://purl.org/dc/terms/title>
+  rdf:type owl:AnnotationProperty ;
+.
+<http://w3id.org/saro#Expertise>
+  rdf:type owl:Class ;
+  rdfs:comment "An advanced or exceptional knowledge or skill in an area or topic" ;
+  rdfs:label "Expertise"@de ;
+  rdfs:label "Expertise"@en ;
+  rdfs:label "Fähigkeit"@de ;
+  owl:equivalentClass :Expertise ;
+.
+<http://www.w3.org/2003/01/geo/wgs84_pos#Point>
+  rdf:type owl:Class ;
+  rdfs:comment """ 
+Uniquely identified by lat/long/alt. i.e.
+
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).
+
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
+  """ ;
+  rdfs:comment """A point, typically described using a coordinate system relative to Earth, such as WGS84.
+  """ ;
+  rdfs:label "Punkt"@de ;
+  rdfs:label "point" ;
+  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+.
+<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing>
+  rdf:type owl:Class ;
+  rdfs:comment """Anything with spatial extent, i.e. size, shape, or position.
+ e.g. people, places, bowling balls, as well as abstract areas like cubes."""@en ;
+  rdfs:label "RäumlichesDing"@de ;
+  rdfs:label "SpatialThing"@en ;
+.
+<http://www.w3.org/2003/01/geo/wgs84_pos#location>
+  rdf:type owl:ObjectProperty ;
+.
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+  rdf:type owl:AnnotationProperty ;
+.
+vcard:Address
+  rdf:type owl:Class ;
+  rdfs:label "Address"@en ;
+  rdfs:label "Adresse"@de ;
+.
+vcard:Location
+  rdf:type owl:Class ;
+  rdfs:label "vcard:Location"@en ;
+  owl:disjointWith vcard:Organization ;
+.
+vcard:Organization
+  rdf:type owl:Class ;
+  rdfs:comment """An object representing an organization.  An organization is a single entity, and might represent a business or government, a department or division within a business or government, a club, an association, or the like.
+"""@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+  rdfs:label "vcard:Organisation"@de ;
+  rdfs:label "vcard:Organization"@en ;
+  rdfs:subClassOf foaf:Agent ;
+  rdfs:subClassOf :Agent ;
+  owl:equivalentClass org:Organization ;
+  owl:equivalentClass foaf:Organization ;
+  owl:equivalentClass <https://schema.org/Organization> ;
+  owl:equivalentClass :Organization ;
+.
+vcard:adr
+  rdf:type owl:ObjectProperty ;
+  owl:equivalentProperty vcard:hasAddress ;
+.
+vcard:hasAddress
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "To specify the components of the delivery address for the object"@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+  rdfs:label "hasAddress"@en ;
+  rdfs:label "hatAdresse" ;
+.
+vcard:hasCountryName
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Used to support property parameters for the country name data property"@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+  rdfs:label "hasCountryName"@en ;
+  rdfs:label "hatLandesnamen"@de ;
+.
+vcard:hasOrganizationName
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Used to support property parameters for the organization name data property"@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+  rdfs:label "hasOrganizationName"@en ;
+  rdfs:label "hatOranisationsnamen"@de ;
+.
+vcard:hasPostalCode
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Used to support property parameters for the postal code data property"@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+  rdfs:label "hasPostalCode"@en ;
+  rdfs:label "hatPLZ"@de ;
+.
+vcard:hasStreetAddress
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Used to support property parameters for the street address data property"@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+  rdfs:label "hasStreetAddress"@en ;
+  rdfs:label "hatStraßenname"@de ;
+.
+vcard:hasValue
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Used to indicate the resource value of an object property that requires property parameters"@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+  rdfs:label "hasValue"@en ;
+  rdfs:label "hatWert"@de ;
+.
+vcard:organization-name
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "To specify the organizational name associated with the object"@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+  rdfs:label "Organisationsname"@de ;
+  rdfs:label "organization name"@en ;
+  rdfs:range xsd:string ;
+.
+vcard:postal-code
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "The postal code associated with the address of the object"@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+  rdfs:label "Postleitzahl"@de ;
+  rdfs:label "postal code"@en ;
+  rdfs:range xsd:integer ;
+.
+vcard:region
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "The region (e.g. state or province) associated with the address of the object"@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+  rdfs:label "Region"@de ;
+  rdfs:label "region"@en ;
+  rdfs:range xsd:string ;
+.
+vcard:street-address
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "The street address associated with the address of the object"@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+  rdfs:label "Staßenname"@de ;
+  rdfs:label "street address"@en ;
+  rdfs:range xsd:string ;
+.
+org:Organization
+  rdf:type owl:Class ;
+  rdfs:label "org:Oraganisation"@de ;
+  rdfs:label "org:Organization"@en ;
+  rdfs:subClassOf foaf:Agent ;
+  rdfs:subClassOf :Agent ;
+  owl:equivalentClass foaf:Organization ;
+  owl:equivalentClass <https://schema.org/Organization> ;
+  owl:equivalentClass :Organization ;
+.
+org:Role
+  rdf:type owl:Class ;
+  rdfs:comment "Verknüpfung der obpa:Rolle zur org:Role"@de ;
+  rdfs:label "org:Role"@en ;
+  owl:equivalentClass :Role ;
+.
+foaf:Agent
+  rdf:type owl:Class ;
+  rdfs:label "foaf:Agent"@en ;
+  rdfs:label "foaf:Akteur"@de ;
+  owl:equivalentClass :Agent ;
+.
+foaf:Organization
+  rdf:type owl:Class ;
+  rdfs:label "foaf:Organisation"@de ;
+  rdfs:label "foaf:Organization"@en ;
+  rdfs:subClassOf foaf:Agent ;
+  rdfs:subClassOf :Agent ;
+  owl:equivalentClass <https://schema.org/Organization> ;
+  owl:equivalentClass :Organization ;
+.
+foaf:Person
+  rdf:type owl:Class ;
+  rdfs:label "foaf:Person"@en ;
+  rdfs:subClassOf foaf:Agent ;
+  rdfs:subClassOf :Agent ;
+  owl:equivalentClass :Person ;
+.
+foaf:age
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "The age in years of some agent." ;
+  rdfs:domain foaf:Agent ;
+  rdfs:isDefinedBy foaf: ;
+  rdfs:label "Alter"@de ;
+  rdfs:label "age" ;
+  rdfs:range rdfs:Literal ;
+  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "unstable" ;
+.
+foaf:based_near
+  rdf:type owl:AnnotationProperty ;
+.
+foaf:birthday
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "The birthday of this Agent, represented in mm-dd string form, eg. '12-31'." ;
+  rdfs:domain foaf:Agent ;
+  rdfs:isDefinedBy foaf: ;
+  rdfs:label "Geburtstag"@de ;
+  rdfs:label "birthday" ;
+  rdfs:range rdfs:Literal ;
+  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "unstable" ;
+.
+foaf:firstName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "The first name of a person." ;
+  rdfs:domain foaf:Person ;
+  rdfs:isDefinedBy foaf: ;
+  rdfs:label "Vorname"@de ;
+  rdfs:label "firstName" ;
+  rdfs:range rdfs:Literal ;
+  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+.
+foaf:gender
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "The gender of this Agent (typically but not necessarily 'male' or 'female')." ;
+  rdfs:domain foaf:Agent ;
+  rdfs:isDefinedBy foaf: ;
+  rdfs:label "Geschlecht"@de ;
+  rdfs:label "gender" ;
+  rdfs:range rdfs:Literal ;
+  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+.
+foaf:lastName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "The last name of a person." ;
+  rdfs:domain foaf:Person ;
+  rdfs:isDefinedBy foaf: ;
+  rdfs:label "Nachname"@de ;
+  rdfs:label "lastName" ;
+  rdfs:range rdfs:Literal ;
+  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+.
+foaf:member
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "foaf:member"@en ;
+  owl:equivalentProperty :employed_by ;
+.
+foaf:title
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Title (Mr, Mrs, Ms, Dr. etc)" ;
+  rdfs:isDefinedBy foaf: ;
+  rdfs:label "Titel"@de ;
+  rdfs:label "title" ;
+  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+.
+<https://schema.org/Organization>
+  rdf:type owl:Class ;
+  rdfs:label "schema:Organisation"@de ;
+  rdfs:label "schema:Organization"@en ;
+  rdfs:subClassOf foaf:Agent ;
+  rdfs:subClassOf :Agent ;
+  owl:equivalentClass :Organization ;
+.
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcBuilding>
+  rdf:type owl:Class ;
+  rdfs:comment "Verknüpfung des obpa:Gebäudes zum owl:ifcBuilding"@de ;
+  rdfs:label "owl:ifcBuilding" ;
+  owl:equivalentClass bot:Building ;
+  owl:equivalentClass :Building ;
+.
+bot:Building
+  rdf:type owl:Class ;
+  rdfs:comment "Verknüpfung des obpa:Gebäudes zum bot:Building"@de ;
+  rdfs:label "bot:Building"@en ;
+  owl:equivalentClass :Building ;
+.
+:
+  rdf:type owl:Ontology ;
+  <http://purl.org/dc/terms/creator> "Judith Fauth"@en ;
+  <http://purl.org/dc/terms/creator> "Sebastian Seiss"@en ;
+  <http://purl.org/dc/terms/modified> "01.08.2024"@en ;
+  <http://purl.org/dc/terms/title> "Ontology for building permit authorities"@en ;
+  rdfs:comment "Diese Ontologie liefert ein Vokabular zur Beschreibung von Baugenehmigungsbehörden"@de ;
+  rdfs:comment "Vocabulary for describing organizational structures of building permit authorities"@en ;
+  owl:imports <http://www.w3.org/2006/vcard/ns> ;
+  owl:versionIRI <https://w3id.org/obpa/0.3> ;
+  owl:versionInfo "0.3"@en ;
+.
+:Activity
+  rdf:type owl:Class ;
+.
+:AdministrativeSubjectArea
+  rdf:type owl:Class ;
+  rdfs:label "Administrative subject area"@en ;
+  rdfs:label "Verwaltungsfachbereiche"@de ;
+  rdfs:subClassOf :SubjectArea ;
+.
+:Agent
+  rdf:type owl:Class ;
+  rdfs:comment "Agents are actors or stakeholders associated with the building permitting process"@en ;
+  rdfs:label "Agents"@en ;
+  rdfs:label "Akteur"@de ;
+.
+:Applicant
+  rdf:type owl:Class ;
+  rdfs:subClassOf :ExternalRole ;
+.
+:Application
+  rdf:type owl:Class ;
+.
+:ApplicationForPreliminaryDecision
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Application ;
+.
+:Architect
+  rdf:type owl:Class ;
+  rdfs:subClassOf :ExternalRole ;
+.
+:BGF
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Building ;
+  rdfs:label "BGF"@de ;
+  rdfs:range xsd:double ;
+.
+:Building
+  rdf:type owl:Class ;
+  rdfs:comment "Verknüpft mit bot:Building und owl:ifcBuilding"@de ;
+  rdfs:label "Building"@en ;
+  rdfs:label "Gebäude"@de ;
+.
+:BuildingApplication
+  rdf:type owl:Class ;
+  rdfs:label "Bauantrag"@de ;
+  rdfs:label "Building Application"@en ;
+  rdfs:subClassOf :Application ;
+.
+:BuildingAuthority
+  rdf:type owl:Class ;
+  rdfs:label "Baugenehmigunsbehörde"@de ;
+  rdfs:label "building authority"@en ;
+  rdfs:subClassOf vcard:Organization ;
+  rdfs:subClassOf org:Organization ;
+  rdfs:subClassOf foaf:Organization ;
+  rdfs:subClassOf <https://schema.org/Organization> ;
+  rdfs:subClassOf :Organization ;
+  owl:disjointWith :Department ;
+  owl:disjointWith :HistoricPreservationAuthority ;
+  owl:disjointWith :NatureConservationAuthority ;
+  owl:disjointWith :ProofingStructuralEngineeringOffice ;
+  owl:disjointWith :PublicAuthorityAgency ;
+.
+:BuildingOfficialRole
+  rdf:type owl:Class ;
+  rdfs:comment "Beschreibt mögliche Rollen von Mitarbeitern einer Baubehörde"@de ;
+  rdfs:label "Behördenmitarbeiterrolle"@de ;
+  rdfs:label "BuildingOfficialRole"@en ;
+  rdfs:subClassOf :ExaminerRole ;
+.
+:BuildingPermittingActivity
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Activity ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom [
+          rdf:type owl:Restriction ;
+          owl:allValuesFrom :BuildingOfficialRole ;
+          owl:onProperty :hasRole ;
+        ] ;
+      owl:onProperty :hasAgent ;
+    ] ;
+.
+:CommercialConstruction
+  rdf:type owl:Class ;
+  rdfs:label "CommercialConstrucions"@en ;
+  rdfs:label "Gewerbebau"@de ;
+  rdfs:subClassOf <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcBuilding> ;
+  rdfs:subClassOf bot:Building ;
+  rdfs:subClassOf :Building ;
+.
+:ConstructionProject
+  rdf:type owl:Class ;
+  rdfs:label "Bauvohaben"@de ;
+  rdfs:label "construction project"@en ;
+.
+:Corridor
+  rdf:type owl:Class ;
+.
+:CoversSector
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Person ;
+  rdfs:label "coversSector"@en ;
+  rdfs:label "umfasstSektor"@de ;
+  rdfs:range :Sector ;
+.
+:Department
+  rdf:type owl:Class ;
+  rdfs:label "Abteilung"@de ;
+  rdfs:label "Department"@en ;
+  rdfs:subClassOf vcard:Organization ;
+  rdfs:subClassOf org:Organization ;
+  rdfs:subClassOf foaf:Organization ;
+  rdfs:subClassOf <https://schema.org/Organization> ;
+  rdfs:subClassOf :Organization ;
+  owl:disjointWith :BuildingAuthority ;
+  owl:disjointWith :HistoricPreservationAuthority ;
+  owl:disjointWith :NatureConservationAuthority ;
+  owl:disjointWith :ProofingStructuralEngineeringOffice ;
+  owl:disjointWith :PublicAuthorityAgency ;
+.
+:District
+  rdf:type owl:Class ;
+.
+:ExaminerRole
+  rdf:type owl:Class ;
+  rdfs:comment "Describes roles to examine building applications"@en ;
+  rdfs:label "ExaminerRole"@en ;
+  rdfs:label "Prüfrollen"@de ;
+  rdfs:subClassOf org:Role ;
+  rdfs:subClassOf :Role ;
+  owl:disjointWith :ExternalRole ;
+.
+:Expertise
+  rdf:type owl:Class ;
+  rdfs:comment "Beschreibt die Fähigkeiten eines Mitarbeiter im Bezug auf die von ihm zu prüfenden Gebäudetypen"@de ;
+  rdfs:comment "Describes the capability of a person or building official"@en ;
+  rdfs:label "Expertise"@de ;
+  rdfs:label "Expertise"@en ;
+  rdfs:label "Fähigkeit"@de ;
+  rdfs:label "capability"@en ;
+.
+:ExternalRole
+  rdf:type owl:Class ;
+  rdfs:label "external role"@en ;
+  rdfs:label "externe Rolle"@de ;
+  rdfs:subClassOf org:Role ;
+  rdfs:subClassOf :Role ;
+.
+:FireOfficialRole
+  rdf:type owl:Class ;
+  rdfs:label "Brandschutzingenieurrolle"@de ;
+  rdfs:label "FireProtectionEngineerRole"@en ;
+  rdfs:subClassOf :ExaminerRole ;
+.
+:Heritage
+  rdf:type owl:Class ;
+  rdfs:label "Denkmalgeschütztes Bauwerk"@de ;
+  rdfs:label "Heritage"@en ;
+  rdfs:subClassOf <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcBuilding> ;
+  rdfs:subClassOf bot:Building ;
+  rdfs:subClassOf :Building ;
+.
+:HistoricPreservationAuthority
+  rdf:type owl:Class ;
+  rdfs:label "Denkmalschutzbehörde"@de ;
+  rdfs:label "Historic preservation authority"@en ;
+  rdfs:subClassOf vcard:Organization ;
+  rdfs:subClassOf org:Organization ;
+  rdfs:subClassOf foaf:Organization ;
+  rdfs:subClassOf <https://schema.org/Organization> ;
+  rdfs:subClassOf :Organization ;
+  owl:disjointWith :BuildingAuthority ;
+  owl:disjointWith :Department ;
+  owl:disjointWith :NatureConservationAuthority ;
+  owl:disjointWith :ProofingStructuralEngineeringOffice ;
+  owl:disjointWith :PublicAuthorityAgency ;
+.
+:IndustrialConstruction
+  rdf:type owl:Class ;
+  rdfs:label "IndustialConstruction"@en ;
+  rdfs:label "Industriebau"@de ;
+  rdfs:subClassOf <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcBuilding> ;
+  rdfs:subClassOf bot:Building ;
+  rdfs:subClassOf :Building ;
+.
+:NatureConservationAuthority
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Organization ;
+  owl:disjointWith :BuildingAuthority ;
+  owl:disjointWith :Department ;
+  owl:disjointWith :HistoricPreservationAuthority ;
+  owl:disjointWith :ProofingStructuralEngineeringOffice ;
+  owl:disjointWith :PublicAuthorityAgency ;
+.
+:Organization
+  rdf:type owl:Class ;
+  rdfs:label "Organisation"@de ;
+  rdfs:label "Organization"@en ;
+  rdfs:subClassOf foaf:Agent ;
+  rdfs:subClassOf :Agent ;
+.
+:Person
+  rdf:type owl:Class ;
+  rdfs:comment "A human being involved in the building permitting process."@en ;
+  rdfs:label "Person"@de ;
+  rdfs:label "Person"@en ;
+  rdfs:subClassOf foaf:Agent ;
+  rdfs:subClassOf :Agent ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty :hasRole ;
+      owl:someValuesFrom :Role ;
+    ] ;
+.
+:Plotofland
+  rdf:type owl:Class ;
+  rdfs:comment "A plot of land describes a area in which the building will be placed. The plot of land is an important part of the building permit"@en ;
+  rdfs:label "Flurstück"@de ;
+  rdfs:label "Plot of land"@en ;
+.
+:Post
+  rdf:type owl:Class ;
+  rdfs:label "Position"@en ;
+  rdfs:label "Stelle"@de ;
+.
+:ProofingStructuralEngineerRole
+  rdf:type owl:Class ;
+  rdfs:label "ProofingStructuralEngineerRole"@en ;
+  rdfs:label "Prüfstatikerrolle"@de ;
+  rdfs:subClassOf :ExaminerRole ;
+.
+:ProofingStructuralEngineeringOffice
+  rdf:type owl:Class ;
+  rdfs:label "ProofingStructuralEngineeringOffice"@en ;
+  rdfs:label "Prüfstatikbüro"@de ;
+  rdfs:subClassOf vcard:Organization ;
+  rdfs:subClassOf org:Organization ;
+  rdfs:subClassOf foaf:Organization ;
+  rdfs:subClassOf <https://schema.org/Organization> ;
+  rdfs:subClassOf :Organization ;
+  owl:disjointWith :BuildingAuthority ;
+  owl:disjointWith :Department ;
+  owl:disjointWith :HistoricPreservationAuthority ;
+  owl:disjointWith :NatureConservationAuthority ;
+  owl:disjointWith :PublicAuthorityAgency ;
+.
+:PublicAuthorityAgency
+  rdf:type owl:Class ;
+  rdfs:label "Ordnungsamt"@de ;
+  rdfs:label "PublicAuthorityAgency"@en ;
+  rdfs:subClassOf vcard:Organization ;
+  rdfs:subClassOf org:Organization ;
+  rdfs:subClassOf foaf:Organization ;
+  rdfs:subClassOf <https://schema.org/Organization> ;
+  rdfs:subClassOf :Organization ;
+  owl:disjointWith :BuildingAuthority ;
+  owl:disjointWith :Department ;
+  owl:disjointWith :HistoricPreservationAuthority ;
+  owl:disjointWith :NatureConservationAuthority ;
+  owl:disjointWith :ProofingStructuralEngineeringOffice ;
+.
+:PublicConstruction
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Building ;
+  owl:equivalentClass :SpecialConstruction ;
+.
+:PublicOfficerRole
+  rdf:type owl:Class ;
+  rdfs:label "Beamtenrolle"@de ;
+  rdfs:label "PublicOfficerRole"@en ;
+  rdfs:subClassOf :ExaminerRole ;
+.
+:Regulations
+  rdf:type owl:Class ;
+  rdfs:label "Verordnungen"@de ;
+  rdfs:label "regulations"@en ;
+.
+:ResidentialConstruction
+  rdf:type owl:Class ;
+  rdfs:label "ResidentialConstruction"@en ;
+  rdfs:label "Wohnungsbau"@de ;
+  rdfs:subClassOf <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcBuilding> ;
+  rdfs:subClassOf bot:Building ;
+  rdfs:subClassOf :Building ;
+.
+:Role
+  rdf:type owl:Class ;
+  rdfs:label "Role"@en ;
+  rdfs:label "Rolle"@de ;
+.
+:Sector
+  rdf:type owl:Class ;
+  rdfs:label "Bereich"@de ;
+  rdfs:label "Sector"@en ;
+.
+:SpecialConstruction
+  rdf:type owl:Class ;
+  rdfs:label "Sonderbau"@de ;
+  rdfs:label "SpecialConstruction"@en ;
+  rdfs:subClassOf <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcBuilding> ;
+  rdfs:subClassOf bot:Building ;
+  rdfs:subClassOf :Building ;
+  owl:equivalentClass :PublicConstruction ;
+.
+:SubjectArea
+  rdf:type owl:Class ;
+  rdfs:comment "Beschreibt welchen Fachbereich ein Sachbearbeiter abdeckt."@de ;
+  rdfs:comment "Describes which subject areas can be processed by an building official"@en ;
+  rdfs:label "Fachbereich"@de ;
+  rdfs:label "Subject area"@en ;
+.
+:TechnicalSubjectArea
+  rdf:type owl:Class ;
+  rdfs:label "Technical subject area"@en ;
+  rdfs:label "Technische Fachbereiche"@de ;
+  rdfs:subClassOf :SubjectArea ;
+.
+:assigned_by
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :BuildingApplication ;
+  rdfs:label "assigned_by"@en ;
+  rdfs:label "zugeteilt_von"@de ;
+  rdfs:range :Person ;
+.
+:definesRole
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Indicates the role that any holder of the Post plays in the organization."@en ;
+  rdfs:domain :Post ;
+  rdfs:label "definesRole"@en ;
+  rdfs:label "definiertRolle"@de ;
+  rdfs:range :Role ;
+.
+:dinstanceToNaturalConservation
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Building ;
+  rdfs:label "EntfernungZumNaturschutzgebiet"@de ;
+  rdfs:label "distanceToNaturalConservation"@en ;
+  rdfs:range xsd:double ;
+.
+:employed_by
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Person ;
+  rdfs:label "beschäftigt_bei"@de ;
+  rdfs:label "employed_by"@en ;
+  rdfs:range :Organization ;
+.
+:hasAgent
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Agent ;
+  rdfs:label "hasAgent"@en ;
+  rdfs:label "hatAkteur"@de ;
+  rdfs:range :Activity ;
+.
+:hasBuilding
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :ConstructionProject ;
+  rdfs:label "hasBuilding"@en ;
+  rdfs:label "hatGebäude"@de ;
+  rdfs:range :Building ;
+.
+:hasBuildingApplication
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Activity ;
+  rdfs:label "hasBuildingApplication"@en ;
+  rdfs:label "hatBauantrag"@de ;
+  rdfs:range :BuildingApplication ;
+.
+:hasBuildingClass
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Building ;
+  rdfs:label "Gebäudeklasse"@de ;
+  rdfs:range [
+      rdf:type rdfs:Datatype ;
+      owl:oneOf [
+          rdf:type rdf:List ;
+          rdf:first 1 ;
+          rdf:rest [
+              rdf:type rdf:List ;
+              rdf:first 2 ;
+              rdf:rest [
+                  rdf:type rdf:List ;
+                  rdf:first 3 ;
+                  rdf:rest [
+                      rdf:type rdf:List ;
+                      rdf:first 4 ;
+                      rdf:rest [
+                          rdf:type rdf:List ;
+                          rdf:first 5 ;
+                          rdf:rest [
+                              rdf:type rdf:List ;
+                              rdf:first "Sonstige bauliche Anlagen" ;
+                              rdf:rest () ;
+                            ] ;
+                        ] ;
+                    ] ;
+                ] ;
+            ] ;
+        ] ;
+    ] ;
+.
+:hasDepartment
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Organization ;
+  rdfs:label "hasDepartment"@en ;
+  rdfs:label "hatAbteilung"@de ;
+  rdfs:range :Department ;
+.
+:hasExpertise
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Person ;
+  rdfs:label "hasExpertise"@en ;
+  rdfs:label "hatExpertise"@de ;
+  rdfs:range <http://w3id.org/saro#Expertise> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+:hasPost
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Organization ;
+  rdfs:label "hastPost"@en ;
+  rdfs:label "hatStelle"@de ;
+  rdfs:range :Post ;
+.
+:hasResponsible
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Describes the responsable Agents for an activity"@en ;
+  rdfs:domain :Agent ;
+  rdfs:label "hasResponsible"@en ;
+  rdfs:label "hatZuständigkeit"@de ;
+  rdfs:range :Activity ;
+.
+:hasRole
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Indicates the role that a person has in an organisation."@en ;
+  rdfs:domain :Agent ;
+  rdfs:label "hasRole"@en ;
+  rdfs:label "hatRolle"@de ;
+  rdfs:range :Role ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+:hasSector
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Organization ;
+  rdfs:label "hasSector"@en ;
+  rdfs:label "hatBereich"@de ;
+  rdfs:range :Sector ;
+.
+:hasSubActivity
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Activity ;
+  rdfs:label "hasSubActivity"@en ;
+  rdfs:label "hatUnteraktivität"@de ;
+  rdfs:range :Activity ;
+.
+:hasSubjectArea
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom :BuildingOfficialRole ;
+      owl:onProperty :hasRole ;
+    ] ;
+  rdfs:label "hasSubjectArea"@en ;
+  rdfs:label "hatFachgebiet"@de ;
+  rdfs:range :SubjectArea ;
+.
+:holds
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Agent ;
+  rdfs:label "besetzt"@de ;
+  rdfs:label "holds"@en ;
+  rdfs:range :Post ;
+.
+:includes
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :BuildingApplication ;
+  rdfs:label "beinhaltet"@de ;
+  rdfs:label "includes"@en ;
+  rdfs:range :ConstructionProject ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+:process
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "bearbeitet"@de ;
+  rdfs:label "process"@en ;
+  owl:inverseOf :processed_by ;
+.
+:processed_by
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :BuildingApplication ;
+  rdfs:label "bearbeitet_von"@de ;
+  rdfs:label "prcessed_by"@en ;
+  rdfs:range :Person ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+:requiresExpertise
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Building ;
+  rdfs:label "benötigtExpertise"@de ;
+  rdfs:label "requiresExpertise"@en ;
+.
+:work_experience
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Arbeitserfahrung"@de ;
+  rdfs:label "WorkExperience"@en ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.

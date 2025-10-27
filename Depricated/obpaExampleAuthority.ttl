@@ -1,0 +1,491 @@
+# baseURI: http://example.org/obpaExampleAuthority#
+# imports: https://w3id.org/obpa#
+# prefix: obpaExampleAuthority
+
+@prefix : <http://example.org/obpaExampleAuthority#> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix obpa: <https://w3id.org/obpa#> .
+@prefix obpaExampleAuthority: <http://example.org/obpaExampleAuthority#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/obpaExampleAuthority>
+  rdf:type owl:Ontology ;
+  owl:imports obpa: ;
+.
+obpaExampleAuthority:
+  rdf:type owl:Ontology ;
+  owl:imports obpa: ;
+.
+obpaExampleAuthority:AddressRange01
+  rdf:type owl:NamedIndividual ;
+  rdf:type vcard:Address ;
+  rdf:type obpa:Sector ;
+  rdfs:label "AddressRange01"@en ;
+  rdfs:label "Adressbereich01"@de ;
+  vcard:postal-code 44787 ;
+.
+obpaExampleAuthority:AddressRange02
+  rdf:type owl:NamedIndividual ;
+  rdf:type vcard:Address ;
+  rdf:type obpa:Sector ;
+  rdfs:label "AddressRange02"@en ;
+  rdfs:label "Adressbereich02"@de ;
+  vcard:postal-code 44780 ;
+.
+obpaExampleAuthority:AddressRange03
+  rdf:type owl:NamedIndividual ;
+  rdf:type vcard:Address ;
+  rdf:type obpa:Sector ;
+  rdfs:label "AddressRange03"@en ;
+  rdfs:label "Adressbereich03"@de ;
+  vcard:postal-code 44789 ;
+.
+obpaExampleAuthority:AdministrativeBuildingOfficial
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:BuildingOfficialRole ;
+  rdfs:label "Verwaltungssachbearbeiter"@de ;
+.
+obpaExampleAuthority:Adresse01
+  rdf:type owl:NamedIndividual ;
+  rdf:type vcard:Address ;
+  vcard:postal-code 44780 ;
+  vcard:region "Bochum" ;
+  vcard:street-address "Universitätsstraße 150" ;
+.
+obpaExampleAuthority:Adresse02
+  rdf:type owl:NamedIndividual ;
+  rdf:type vcard:Address ;
+  vcard:postal-code 44780 ;
+  vcard:region "Bochum" ;
+  vcard:street-address "Schulweg" ;
+.
+obpaExampleAuthority:Anwohner
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:ExternalRole ;
+.
+obpaExampleAuthority:Applicant01
+  rdf:type owl:NamedIndividual ;
+  rdf:type foaf:Person ;
+  rdf:type obpa:Person ;
+  rdfs:label "Applicant01"@en ;
+  rdfs:label "Bewerber01"@de ;
+  foaf:firstName "Otto" ;
+  foaf:lastName "Normalverbraucher" ;
+  obpa:hasRole obpa:Bewerber ;
+.
+obpaExampleAuthority:BO1
+  rdf:type owl:NamedIndividual ;
+  rdf:type foaf:Person ;
+  rdf:type obpa:Activity ;
+  rdf:type obpa:Person ;
+  rdfs:comment "Bearbeiter01"@de ;
+  rdfs:label "BO1"@en ;
+  foaf:firstName "Max" ;
+  foaf:lastName "Mustermann" ;
+  foaf:member obpaExampleAuthority:BuildingAuthority_Bochum ;
+  obpa:employed_by obpaExampleAuthority:BuildingAuthority_Bochum ;
+  obpa:hasRole obpaExampleAuthority:SupervisoryBuildingOfficial ;
+  obpa:work_experience 8 ;
+.
+obpaExampleAuthority:BO2
+  rdf:type owl:NamedIndividual ;
+  rdf:type foaf:Person ;
+  rdf:type obpa:Person ;
+  rdfs:comment "Bearbeiter02"@de ;
+  rdfs:label "BO2"@en ;
+  foaf:firstName "Erika" ;
+  foaf:lastName "Musterfrau" ;
+  foaf:member obpaExampleAuthority:BuildingAuthority_Bochum ;
+  obpa:CoversSector obpaExampleAuthority:AddressRange02 ;
+  obpa:employed_by obpaExampleAuthority:BuildingAuthority_Bochum ;
+  obpa:hasRole obpaExampleAuthority:AdministrativeBuildingOfficial ;
+  obpa:hasSubjectArea obpaExampleAuthority:public_administration_law ;
+  obpa:work_experience 7 ;
+.
+obpaExampleAuthority:BO3
+  rdf:type owl:NamedIndividual ;
+  rdf:type foaf:Person ;
+  rdf:type obpa:Person ;
+  rdfs:comment "Bearbeiter03"@de ;
+  rdfs:label "BO3"@en ;
+  foaf:firstName "Markus" ;
+  foaf:lastName "Möglich" ;
+  foaf:member obpaExampleAuthority:BuildingAuthority_Bochum ;
+  obpa:CoversSector obpaExampleAuthority:AddressRange01 ;
+  obpa:employed_by obpaExampleAuthority:BuildingAuthority_Bochum ;
+  obpa:hasExpertise obpaExampleAuthority:review_industrial_construction ;
+  obpa:hasExpertise obpaExampleAuthority:review_residential_construction ;
+  obpa:hasExpertise obpaExampleAuthority:review_special_construction ;
+  obpa:hasRole obpaExampleAuthority:TechnicalBuildingOfficial ;
+  obpa:hasSubjectArea obpaExampleAuthority:building_law ;
+  obpa:hasSubjectArea obpaExampleAuthority:planning_law ;
+  obpa:work_experience 7 ;
+.
+obpaExampleAuthority:BO4
+  rdf:type owl:NamedIndividual ;
+  rdf:type foaf:Person ;
+  rdf:type obpa:Person ;
+  rdfs:comment "Bearbeiter04"@de ;
+  rdfs:label "BO4"@en ;
+  foaf:firstName "John" ;
+  foaf:lastName "Doe" ;
+  foaf:member obpaExampleAuthority:BuildingAuthority_Bochum ;
+  obpa:CoversSector obpaExampleAuthority:AddressRange03 ;
+  obpa:employed_by obpaExampleAuthority:BuildingAuthority_Bochum ;
+  obpa:hasExpertise obpaExampleAuthority:review_industrial_construction ;
+  obpa:hasExpertise obpaExampleAuthority:review_residential_construction ;
+  obpa:hasRole obpaExampleAuthority:TechnicalBuildingOfficial ;
+  obpa:hasSubjectArea obpaExampleAuthority:planning_law ;
+  obpa:work_experience 3 ;
+.
+obpaExampleAuthority:BO5
+  rdf:type owl:NamedIndividual ;
+  rdf:type foaf:Person ;
+  rdf:type obpa:Person ;
+  rdfs:comment "Bearbeiter05"@de ;
+  rdfs:label "BO5"@en ;
+  foaf:firstName "Ola" ;
+  foaf:lastName "Nordmann" ;
+  foaf:member obpaExampleAuthority:BuildingAuthority_Bochum ;
+  obpa:CoversSector obpaExampleAuthority:AddressRange02 ;
+  obpa:employed_by obpaExampleAuthority:BuildingAuthority_Bochum ;
+  obpa:hasExpertise obpaExampleAuthority:review_industrial_construction ;
+  obpa:hasExpertise obpaExampleAuthority:review_residential_construction ;
+  obpa:hasRole obpaExampleAuthority:TechnicalBuildingOfficial ;
+  obpa:hasSubjectArea obpaExampleAuthority:building_law ;
+  obpa:work_experience 15 ;
+.
+obpaExampleAuthority:Bewerber
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:ExternalRole ;
+.
+obpaExampleAuthority:Building01
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:Heritage ;
+  rdf:type obpa:SpecialConstruction ;
+  rdfs:label "Bauwerk01"@de ;
+  rdfs:label "Building01"@en ;
+  obpa:BGF "2500.0"^^xsd:double ;
+  obpa:dinstanceToNaturalConservation "45.0"^^xsd:double ;
+  obpa:requiresExpertise obpaExampleAuthority:review_heritage ;
+  obpa:requiresExpertise obpaExampleAuthority:review_special_construction ;
+.
+obpaExampleAuthority:Building02
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:ResidentialConstruction ;
+  rdfs:label "Bauwerk02"@de ;
+  rdfs:label "Building02"@en ;
+  obpa:requiresExpertise obpaExampleAuthority:review_residential_construction ;
+.
+obpaExampleAuthority:BuildingApplication01
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:BuildingApplication ;
+  rdfs:label "Bauantrag01"@de ;
+  rdfs:label "BuildingApplication01"@en ;
+  vcard:adr obpaExampleAuthority:Adresse01 ;
+  vcard:hasAddress obpaExampleAuthority:Adresse01 ;
+  obpa:includes obpaExampleAuthority:ConstructionProject01 ;
+.
+obpaExampleAuthority:BuildingApplication02
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:BuildingApplication ;
+  rdfs:label "Bauantrag02"@de ;
+  rdfs:label "BuildingApplication02"@en ;
+  vcard:adr obpaExampleAuthority:Adresse02 ;
+  vcard:hasAddress obpaExampleAuthority:Adresse02 ;
+  obpa:includes obpaExampleAuthority:ConstructionProject02 ;
+.
+obpaExampleAuthority:BuildingAuthority
+  rdf:type owl:Class ;
+.
+obpaExampleAuthority:BuildingAuthority_Bochum
+  rdf:type obpaExampleAuthority:BuildingAuthority ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Baugenehmigungsbehörde_Bochum"@de ;
+  rdfs:label "BuildingAuthority_Bochum"@en ;
+  vcard:hasAddress obpaExampleAuthority:AddressRange03 ;
+  obpa:hasSector obpaExampleAuthority:AddressRange01 ;
+  obpa:hasSector obpaExampleAuthority:AddressRange02 ;
+.
+obpaExampleAuthority:CheckingApplication01
+  rdf:type owl:NamedIndividual ;
+  rdf:type foaf:Agent ;
+  rdf:type obpa:Agent ;
+  rdf:type obpa:BuildingPermittingActivity ;
+  rdfs:label "AntragPrüfen01"@de ;
+  rdfs:label "CheckingApplication01"@en ;
+  obpa:hasAgent obpaExampleAuthority:BO1 ;
+  obpa:hasBuildingApplication obpaExampleAuthority:BuildingApplication01 ;
+.
+obpaExampleAuthority:ConstructionProject01
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:ConstructionProject ;
+  rdfs:label "Bauprojekt01"@de ;
+  rdfs:label "ConstructionProject01"@en ;
+  obpa:hasBuilding obpaExampleAuthority:Building01 ;
+.
+obpaExampleAuthority:ConstructionProject02
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:ConstructionProject ;
+  rdfs:label "Bauprojekt02"@de ;
+  rdfs:label "ConstructionProject02"@en ;
+  obpa:hasBuilding obpaExampleAuthority:Building02 ;
+.
+obpaExampleAuthority:HistoricPreservationAuthority_Bochum
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:HistoricPreservationAuthority ;
+  rdfs:label "Denkmalschutzbehörde_Bochum"@de ;
+  rdfs:label "HistoricPreservationAuthority_Bochum"@en ;
+.
+obpaExampleAuthority:NatureConservationAuthority_Bochum
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:NatureConservationAuthority ;
+.
+obpaExampleAuthority:Residents
+  rdf:type owl:NamedIndividual ;
+  rdf:type foaf:Person ;
+  rdf:type obpa:Person ;
+  rdfs:label "Anwohner01"@de ;
+  rdfs:label "Resident01"@en ;
+  foaf:firstName "Lieschen" ;
+  foaf:lastName "Müller" ;
+  obpa:hasRole obpa:Anwohner ;
+.
+obpaExampleAuthority:SupervisoryBuildingOfficial
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:BuildingOfficialRole ;
+  rdfs:label "Supervisor"@en ;
+  rdfs:label "Vorgesetzer"@de ;
+.
+obpaExampleAuthority:TechnicalBuildingOfficial
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:BuildingOfficialRole ;
+  rdfs:label "Technical Building Official"@en ;
+  rdfs:label "TechnischerSacharbeiter"@de ;
+.
+obpaExampleAuthority:building_law
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:TechnicalSubjectArea ;
+  rdfs:label "Bauordnungsrecht"@de ;
+  rdfs:label "BuildingLaw"@en ;
+.
+obpaExampleAuthority:planning_law
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:TechnicalSubjectArea ;
+  rdfs:label "Bauplanungsrecht"@de ;
+  rdfs:label "PlanningLaw"@en ;
+.
+obpaExampleAuthority:public_administration_law
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:AdministrativeSubjectArea ;
+  rdfs:label "Bauverwaltungsrecht"@de ;
+  rdfs:label "PublicAdministrationLaw"@en ;
+.
+obpaExampleAuthority:review_commercial_construction
+  rdf:type <http://w3id.org/saro#Expertise> ;
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:Expertise ;
+  rdfs:label "prüft_Gewerbebau"@de ;
+  rdfs:label "review_commercial_Construction"@en ;
+.
+obpaExampleAuthority:review_heritage
+  rdf:type <http://w3id.org/saro#Expertise> ;
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:Expertise ;
+  rdfs:label "prüft_denkmalgeschützteBauwerke"@de ;
+  rdfs:label "review_heritage"@en ;
+.
+obpaExampleAuthority:review_industrial_construction
+  rdf:type <http://w3id.org/saro#Expertise> ;
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:Expertise ;
+  rdfs:label "prüft_Industriebau"@de ;
+  rdfs:label "review_industrial_construction"@en ;
+.
+obpaExampleAuthority:review_public_construction
+  rdf:type <http://w3id.org/saro#Expertise> ;
+  rdf:type obpa:Expertise ;
+.
+obpaExampleAuthority:review_residential_construction
+  rdf:type <http://w3id.org/saro#Expertise> ;
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:Expertise ;
+  rdfs:label "prüft_Wohnungsbau"@de ;
+  rdfs:label "review_residential_construction"@en ;
+.
+obpaExampleAuthority:review_special_construction
+  rdf:type <http://w3id.org/saro#Expertise> ;
+  rdf:type owl:NamedIndividual ;
+  rdf:type obpa:Expertise ;
+  rdfs:label "prüft_Sonderbau"@de ;
+  rdfs:label "review_special_construction"@en ;
+.
+<http://w3id.org/saro#Expertise>
+  rdf:type owl:Class ;
+.
+vcard:Address
+  rdf:type owl:Class ;
+.
+vcard:adr
+  rdf:type owl:AnnotationProperty ;
+.
+vcard:hasAddress
+  rdf:type owl:AnnotationProperty ;
+.
+vcard:postal-code
+  rdf:type owl:AnnotationProperty ;
+.
+vcard:region
+  rdf:type owl:AnnotationProperty ;
+.
+vcard:street-address
+  rdf:type owl:AnnotationProperty ;
+.
+foaf:Agent
+  rdf:type owl:Class ;
+.
+foaf:Person
+  rdf:type owl:Class ;
+.
+foaf:firstName
+  rdf:type owl:AnnotationProperty ;
+.
+foaf:lastName
+  rdf:type owl:AnnotationProperty ;
+.
+foaf:member
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:Activity
+  rdf:type owl:Class ;
+.
+obpa:AdministrativeSubjectArea
+  rdf:type owl:Class ;
+.
+obpa:Agent
+  rdf:type owl:Class ;
+.
+obpa:BGF
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:BuildingApplication
+  rdf:type owl:Class ;
+.
+obpa:BuildingOfficialRole
+  rdf:type owl:Class ;
+.
+obpa:BuildingPermittingActivity
+  rdf:type owl:Class ;
+.
+obpa:CommercialConstruction
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue obpaExampleAuthority:review_commercial_construction ;
+      owl:onProperty obpa:requiresExpertise ;
+    ] ;
+.
+obpa:ConstructionProject
+  rdf:type owl:Class ;
+.
+obpa:CoversSector
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:Expertise
+  rdf:type owl:Class ;
+.
+obpa:ExternalRole
+  rdf:type owl:Class ;
+.
+obpa:Heritage
+  rdf:type owl:Class ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue obpaExampleAuthority:review_heritage ;
+      owl:onProperty obpa:requiresExpertise ;
+    ] ;
+.
+obpa:HistoricPreservationAuthority
+  rdf:type owl:Class ;
+.
+obpa:IndustrialConstruction
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue obpaExampleAuthority:review_industrial_construction ;
+      owl:onProperty obpa:requiresExpertise ;
+    ] ;
+.
+obpa:NatureConservationAuthority
+  rdf:type owl:Class ;
+.
+obpa:Person
+  rdf:type owl:Class ;
+.
+obpa:PublicConstruction
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue obpaExampleAuthority:review_public_construction ;
+      owl:onProperty obpa:requiresExpertise ;
+    ] ;
+.
+obpa:ResidentialConstruction
+  rdf:type owl:Class ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue obpaExampleAuthority:review_residential_construction ;
+      owl:onProperty obpa:requiresExpertise ;
+    ] ;
+.
+obpa:Sector
+  rdf:type owl:Class ;
+.
+obpa:SpecialConstruction
+  rdf:type owl:Class ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue obpaExampleAuthority:review_special_construction ;
+      owl:onProperty obpa:requiresExpertise ;
+    ] ;
+.
+obpa:TechnicalSubjectArea
+  rdf:type owl:Class ;
+.
+obpa:dinstanceToNaturalConservation
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:employed_by
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:hasAgent
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:hasBuilding
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:hasBuildingApplication
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:hasExpertise
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:hasRole
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:hasSector
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:hasSubjectArea
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:includes
+  rdf:type owl:AnnotationProperty ;
+.
+obpa:work_experience
+  rdf:type owl:AnnotationProperty ;
+.
